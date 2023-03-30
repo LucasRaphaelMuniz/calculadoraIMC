@@ -28,18 +28,25 @@ form.onsubmit = e => {
 
 function displayResultMessage(result) {
   let message = ""
+  let messageClass = ""
   if (result < 18.5) {
-    message = `Seu IMC é de ${result}, Classficação: MAGREZA`
+    message = `Seu IMC é de ${result}`
+    messageClass = 'Classficação: MAGREZA'
   } else if (result >= 18.5 && result < 25){
-    message = `Seu IMC é de ${result}, Classficação: NORMAL`
+    message = `Seu IMC é de ${result}`
+    messageClass = 'Classficação: NORMAL'
   } else if (result >= 25 && result < 30){
-    message = `Seu IMC é de ${result}, Classficação: SOBREPESO` 
+    message = `Seu IMC é de ${result}` 
+    messageClass = 'Classficação: SOBREPESO'
   } else if (result >= 30 && result < 40){
-    message = `Seu IMC é de ${result}, Classficação: OBESIDADE` 
+    message = `Seu IMC é de ${result}` 
+    messageClass = 'Classficação: OBESIDADE'
   } else {
-    message = `Seu IMC é de ${result}, Classficação:  GRAVE?` 
+    message = `Seu IMC é de ${result}` 
+    messageClass = 'Classficação:  GRAVE'
   }
   Modal.message.innerText = message
+  Modal.messageClass.innerText = messageClass
   Modal.open()
 }
 
